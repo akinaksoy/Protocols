@@ -10,7 +10,7 @@ import UIKit
 class SecondViewController: UIViewController {
 
     
-    var firstPageDelegete : returnFromSecondPage?
+    var firstPageDelegete : returnFirstPageDelegate?
     
     var textField : UITextField = {
        let textField = UITextField()
@@ -60,7 +60,7 @@ class SecondViewController: UIViewController {
             make.height.equalTo(50)
         }
     }
-    init(firstDelegete : returnFromSecondPage) {
+    init(firstDelegete : returnFirstPageDelegate) {
         firstPageDelegete = firstDelegete
         super.init(nibName: nil, bundle: nil)
     }
@@ -85,7 +85,7 @@ class SecondViewController: UIViewController {
         firstPageDelegete?.returnHomePage(text: text)
         navigationController?.popViewController(animated: true)
     }
-    func navigateThirdPage(text : String , delegate : returnFromSecondPage) {
+    func navigateThirdPage(text : String , delegate : returnFirstPageDelegate) {
         let destinationVC = ThirdViewController(firstPageDelegete: delegate, secondPageText: text)
         navigationController?.pushViewController(destinationVC, animated: true)
     }

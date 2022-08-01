@@ -9,7 +9,7 @@ import UIKit
 
 class ThirdViewController: UIViewController {
 
-    var firstDelegate : returnFromSecondPage?
+    var firstDelegate : returnFirstPageDelegate?
     var textSecondPage : String?
     
     var textField : UITextField = {
@@ -48,7 +48,7 @@ class ThirdViewController: UIViewController {
         }
     }
     
-    init (firstPageDelegete : returnFromSecondPage, secondPageText : String) {
+    init (firstPageDelegete : returnFirstPageDelegate, secondPageText : String) {
         
         firstDelegate = firstPageDelegete
         textSecondPage = secondPageText
@@ -58,6 +58,7 @@ class ThirdViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     @objc func sendDataToFirstPage () {
         
         guard let dataText = textField.text, let secondPageText = textSecondPage else { return }

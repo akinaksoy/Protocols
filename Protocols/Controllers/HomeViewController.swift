@@ -7,13 +7,13 @@
 
 import UIKit
 import SnapKit
-protocol returnFromSecondPage {
+protocol returnFirstPageDelegate {
     
     func returnHomePage(text : String)
 }
 
 
-class HomeViewController: UIViewController,returnFromSecondPage {
+class HomeViewController: UIViewController,returnFirstPageDelegate {
     
     let titleLabel : UILabel = {
        var label = UILabel()
